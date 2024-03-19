@@ -121,7 +121,7 @@ def test_daily_max(test_input, expected_output):
                 columns = [ 'A', 'B', 'C' ]
             ),
             pd.DataFrame(
-                data = [ [2, 1, 1] ],
+                data = [ [1, 1, 2] ],
                 index = [ datetime.date(2000, 1, 1) ],
                 columns = [ 'A', 'B', 'C' ]
             )
@@ -135,14 +135,14 @@ def test_daily_max(test_input, expected_output):
                 columns = [ 'A', 'B', 'C' ]
             ),
             pd.DataFrame(
-                data = [[-2, -6, -4]],
+                data = [ [-4, -6, 2] ],
                 index = [ datetime.date(2000, 1, 1) ],
                 columns = [ 'A', 'B', 'C' ]
             )
         ),
     ])
 def test_daily_min(test_input, expected_output):
-    """Test max function works for array of zeroes and positive integers."""
+    """Test min function works for array of zeroes and positive integers."""
     from catchment.models import daily_min
     pdt.assert_frame_equal(daily_min(test_input), expected_output)
 
