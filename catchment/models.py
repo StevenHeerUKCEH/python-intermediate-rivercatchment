@@ -59,5 +59,7 @@ def daily_min(data):
 
 def data_normalise(data):
     """Normalise any given 2D data array"""
-    max = np.array(np.max(data, axis=1))
+    max = np.array(np.max(data, axis=0))
     return data / max[np.newaxis, :]
+
+
